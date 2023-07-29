@@ -1,0 +1,22 @@
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 3rem 2rem;
+}
+
+@media (max-width: 1023px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1.5rem;
+    margin: 3rem 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .gridContainer {
+    grid-template-columns: repeat(1, 2fr);
+    gap: 1.5rem;
+    margin: 3rem 1rem;
+  }
+}
