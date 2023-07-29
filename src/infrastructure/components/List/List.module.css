@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  padding: 10px 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+}
+
+.wrapper {
+  padding: 15px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+}
+
+.list {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.list thead {
+  border-bottom: 1.5px solid #e1e1e1;
+}
+
+.photos-row-grey {
+  background-color: #f2f3f382;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.photos-row-white {
+  background-color: #fff;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.header th {
+  padding: 0.5rem;
+  text-align: left;
+  text-align: center;
+}
+
+.cell {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 0.5rem;
+}
+
+.cell td {
+  text-align: center;
+}
+
+.image {
+  padding: 0.5rem;
+  border-radius: 20px;
+}
