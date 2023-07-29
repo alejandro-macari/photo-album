@@ -5,7 +5,6 @@ import { albumService } from '@/infrastructure/services/album.service';
 import { photoService } from '@/infrastructure/services/photo.service';
 
 import styles from './page.module.css';
-import Loading from './loading';
 
 interface Props {
   params: {
