@@ -1,11 +1,12 @@
 'use client';
 import { useEffect, useState, useMemo } from 'react';
 
+import { Album } from '@/domain/models/album.model';
+
 import Grid from '@/infrastructure/components/Grid/Grid';
 import Card from '@/infrastructure/components/Card/Card';
-import { albumService } from '@/infrastructure/services/album.service';
 import Search from '@/infrastructure/components/Search/Search';
-import { Album } from '@/domain/models/album.model';
+import { albumService } from '@/infrastructure/services/album.service';
 
 export default function Home() {
   const [albums, setAlbums] = useState<Album[]>([]);
