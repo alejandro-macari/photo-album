@@ -4,7 +4,7 @@ const defaultHeaders = {
 
 const get = async <T>(
   url: string,
-  headers: { [key: string]: string } = defaultHeaders,
+  headers: { [key: string]: any } = defaultHeaders,
 ) => {
   const response = await fetch(url, {
     method: 'GET',
@@ -16,7 +16,7 @@ const get = async <T>(
 const post = async <T>(
   url: string,
   body: any,
-  headers: { [key: string]: string } = defaultHeaders,
+  headers: { [key: string]: any } = defaultHeaders,
 ) => {
   const response = await fetch(url, {
     method: 'POST',
@@ -29,7 +29,7 @@ const post = async <T>(
 const put = async <T>(
   url: string,
   body: any,
-  headers: { [key: string]: string } = defaultHeaders,
+  headers: { [key: string]: any } = defaultHeaders,
 ) => {
   const response = await fetch(url, {
     method: 'PUT',
@@ -41,7 +41,7 @@ const put = async <T>(
 
 const _delete = async <T>(
   url: string,
-  headers: { [key: string]: string } = defaultHeaders,
+  headers: { [key: string]: any } = defaultHeaders,
 ) => {
   const response = await fetch(url, {
     method: 'DELETE',
