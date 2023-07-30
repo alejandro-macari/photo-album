@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.title}>
-        <Link href="/">Photo Albums</Link>
+        <Link data-testid="homelink" href="/">
+          Photo Albums
+        </Link>
       </div>
     </div>
   );
