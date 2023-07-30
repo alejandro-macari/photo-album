@@ -7,7 +7,7 @@ import styles from './Card.module.css';
 
 const Card = ({ album }: { album: Album }) => {
   return (
-    <Link href={`/album/${album.id}`}>
+    <Link data-cy="card" href={`/album/${album.id}`}>
       <div className={styles.card}>
         <div className={styles.image}>
           <Image

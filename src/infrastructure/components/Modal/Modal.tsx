@@ -32,7 +32,7 @@ const Modal = ({ close, children }: Props) => {
   }, [close, internalRef]);
 
   return createPortal(
-    <div data-testid="modal" ref={internalRef}>
+    <div data-cy="modal" data-testid="modal" ref={internalRef}>
       {children}
     </div>,
     ref.current,
