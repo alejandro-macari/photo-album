@@ -1,7 +1,6 @@
 import styles from './Grid.module.css';
-import { ReactNode } from 'react';
 
-const Grid = ({ children }: { children?: Array<ReactNode> }) => {
+const Grid = ({ children }: React.PropsWithChildren) => {
   return <div className={styles.gridContainer}>{children}</div>;
 };
 
