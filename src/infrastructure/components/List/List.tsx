@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import styles from './List.module.css';
 import { Photo } from '@/domain/models/photo.model';
 import Row from './Row';
@@ -21,7 +20,7 @@ const List = ({ photos }: Props) => {
               <th>Album Id</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody data-testid="table-body">
             {photos.map((photo) => (
               <Row key={photo.id} photo={photo} />
             ))}

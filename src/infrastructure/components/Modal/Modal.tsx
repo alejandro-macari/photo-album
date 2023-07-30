@@ -31,7 +31,12 @@ const Modal = ({ close, children }: Props) => {
     };
   }, [close, internalRef]);
 
-  return createPortal(<div ref={internalRef}>{children}</div>, ref.current);
+  return createPortal(
+    <div data-testid="modal" ref={internalRef}>
+      {children}
+    </div>,
+    ref.current,
+  );
 };
 
 export default Modal;

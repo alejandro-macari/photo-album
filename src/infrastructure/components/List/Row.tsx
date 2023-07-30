@@ -15,7 +15,7 @@ const Row = ({ photo }: { photo: Photo }) => {
   };
 
   return (
-    <tr onClick={() => setOpen(true)} className={styles.cell}>
+    <tr data-testid="row" onClick={() => setOpen(true)} className={styles.cell}>
       <td>
         <Image
           className={styles.image}
@@ -26,8 +26,8 @@ const Row = ({ photo }: { photo: Photo }) => {
         />
       </td>
       <td>{photo.title}</td>
-      <td>{photo.id}</td>
-      <td>{photo.albumId}</td>
+      <td data-testid="photo-id">{photo.id}</td>
+      <td data-testid="album-id">{photo.albumId}</td>
       {isOpen ? (
         <Modal close={() => setOpen(false)}>
           <Image src={photo.url} alt={photo.title} width={600} height={600} />
