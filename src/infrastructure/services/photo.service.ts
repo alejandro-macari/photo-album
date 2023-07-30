@@ -6,10 +6,10 @@ const _BASE_URL = 'https://jsonplaceholder.typicode.com/photos';
 
 const headers = {
   'Content-Type': 'application/json',
-  'next': {
-    'revalidate': 24 * 60 * 60
-  }
-}
+  next: {
+    revalidate: 24 * 60 * 60,
+  },
+};
 
 const getById = async (
   photoId: number | number[],
@@ -22,7 +22,10 @@ const getById = async (
 };
 
 const getByAlbum = async (albumId: number): Promise<Photo[]> => {
-  return (await http.get(`${_BASE_URL}?albumId=${albumId}`, headers)) as Photo[];
+  return (await http.get(
+    `${_BASE_URL}?albumId=${albumId}`,
+    headers,
+  )) as Photo[];
 };
 
 const getAlbumCover = async (albumId: number): Promise<Photo> => {

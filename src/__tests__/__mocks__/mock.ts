@@ -18,9 +18,4 @@ const mockPhoto = {
 
 const mockPhotoList = [mockPhoto];
 
-export {
-    mockAlbum,
-    mockAlbumList,
-    mockPhoto,
-    mockPhotoList
-}
+export { mockAlbum, mockAlbumList, mockPhoto, mockPhotoList };

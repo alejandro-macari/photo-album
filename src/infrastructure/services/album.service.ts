@@ -6,41 +6,48 @@ import { Photo } from '@/domain/models/photo.model';
 import { AlbumRepository } from '@/domain/repositories/album.repo';
 
 const _BASE_URL = 'https://jsonplaceholder.typicode.com/albums';
-const _ALBUMS_KEY = "albums"
+const _ALBUMS_KEY = 'albums';
 
 const headers = {
   'Content-Type': 'application/json',
-  'next': {
-    'revalidate': 24 * 60 * 60
-  }
-}
+  next: {
+    revalidate: 24 * 60 * 60,
+  },
+};
 
 interface Cache {
-    data: { [id: string]: Album },
-    timestamp: number
+  data: { [id: string]: Album };
+  timestamp: number;
 }
 
 const getDataFromStorage = (): Cache | null => {
   const storage = localStorage.getItem(_ALBUMS_KEY);
   if (storage) {
-    return JSON.parse(storage) as Cache
+    return JSON.parse(storage) as Cache;
   }
-  return null
-}
+  return null;
+};
 
 const setDataToStorage = (albums: Album[]) => {
-  localStorage.setItem(_ALBUMS_KEY, JSON.stringify({
-    data: albums.reduce((prev, curr) => ({...prev, [curr.id]: curr }), {}),
-    timestamp: new Date().getTime()
-  }))
-}
+  localStorage.setItem(
+    _ALBUMS_KEY,
+    JSON.stringify({
+      data: albums.reduce((prev, curr) => ({ ...prev, [curr.id]: curr }), {}),
+      timestamp: new Date().getTime(),
+    }),
+  );
+};
 
 const get = async (): Promise<Album[]> => {
   const cache = getDataFromStorage();
-  const now = new Date().getTime()
+  const now = new Date().getTime();
 
-  if (!cache || Object.values(cache.data).length < 100 || now - cache.timestamp > 24 * 60 * 60 * 1000) {
-    console.log("fetchin")
+  if (
+    !cache ||
+    Object.values(cache.data).length < 100 ||
+    now - cache.timestamp > 24 * 60 * 60 * 1000
+  ) {
+    console.log('fetchin');
     const albums = (await http.get(_BASE_URL)) as Album[];
     const albumIds = albums.map((album) => album.id);
     const covers = (await photoService.getById(albumIds)) as Photo[];
@@ -49,10 +56,10 @@ const get = async (): Promise<Album[]> => {
       albums[i].cover = url;
       albums[i].coverThumbnail = thumbnailUrl;
     }
-    setDataToStorage(albums)
+    setDataToStorage(albums);
     return albums;
   }
-  
+
   return Object.values(cache.data);
 };
 
