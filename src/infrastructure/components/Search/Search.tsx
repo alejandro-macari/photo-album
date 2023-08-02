@@ -17,7 +17,7 @@ const Search = ({ query, setQuery, results }: SearchInputProps) => {
       <input
         type="text"
         className={styles.search}
-        placeholder="Search your album"
+        placeholder="Filter albums..."
         value={query}
         onChange={handleChange}
       />

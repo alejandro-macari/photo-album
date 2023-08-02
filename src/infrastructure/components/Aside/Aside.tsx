@@ -18,7 +18,7 @@ function Aside({ album }: AsideProps) {
         />
       </div>
       <div className={styles.content}>
-        <h1 className={styles.title}>Album title: {album?.title}</h1>
+        <h1 className={styles.title}>Title Album: {album?.title}</h1>
         <p className={styles.subtitle}>Album id: {album?.id}</p>
       </div>
     </div>

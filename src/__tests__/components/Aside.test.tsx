@@ -7,7 +7,9 @@ test('Aside should render correct information', () => {
 
   const title = aside.getByText(`Album title: ${mockAlbum.title}`);
   const subtitle = aside.getByText(`Album id: ${mockAlbum.id}`);
-  const image = aside.getByAltText(`${mockAlbum.title} cover`) as HTMLImageElement;
+  const image = aside.getByAltText(
+    `${mockAlbum.title} cover`,
+  ) as HTMLImageElement;
 
   expect(title).toBeInTheDocument();
   expect(subtitle).toBeInTheDocument();

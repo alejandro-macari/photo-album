@@ -2,19 +2,33 @@
   display: flex;
   justify-content: flex-end;
   padding: 1rem 0.5rem;
+  margin: 0 6rem;
+}
+
+@media (max-width: 767px) {
+  .container {
+    justify-content: center;
+  }
 }
 
 .search {
   margin: 0 0.2rem;
-  padding: 0.2rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
+}
+
+.search::placeholder {
+  color: steelblue;
 }
 
 .counter {
   background-color: steelblue;
   color: white;
-  padding: 0.25rem;
+  padding: 0.25rem 1rem;
   border-radius: 8px;
   font-weight: bold;
   font-size: 1rem;
+  margin: 0.25rem 0;
 }
