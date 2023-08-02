@@ -2,11 +2,11 @@ import styles from './List.module.css';
 import { Photo } from '@/domain/models/photo.model';
 import Row from './Row';
 
-interface Props {
+interface ListProps {
   photos: Photo[];
 }
 
-const List = ({ photos }: Props) => {
+const List = ({ photos }: ListProps) => {
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Photos: {photos.length}</h3>

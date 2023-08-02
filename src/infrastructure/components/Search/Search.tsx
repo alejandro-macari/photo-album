@@ -1,12 +1,12 @@
 import styles from './Search.module.css';
 
-interface Props {
+interface SearchInputProps {
   query: string;
   setQuery: (query: string) => void;
   results: number;
 }
 
-const Search = ({ query, setQuery, results }: Props) => {
+const Search = ({ query, setQuery, results }: SearchInputProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };

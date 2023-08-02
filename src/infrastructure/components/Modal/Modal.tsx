@@ -2,12 +2,12 @@
 import { createPortal } from 'react-dom';
 import { ReactNode, useEffect, useRef } from 'react';
 
-interface Props {
+interface ModalProps {
   close: () => void;
   children: ReactNode;
 }
 
-const Modal = ({ close, children }: Props) => {
+const Modal = ({ close, children }: ModalProps) => {
   const ref = useRef<HTMLElement | null>(null);
   const internalRef = useRef<any>(null);
   if (!ref.current) {
