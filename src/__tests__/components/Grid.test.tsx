@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import Grid from '@/infrastructure/components/Grid/Grid';
 
-test('Grid should display childs', () => {
+test('Grid should display children', () => {
   const grid = render(
     <Grid>
       <div data-testid="children">test</div>
